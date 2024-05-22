@@ -13,8 +13,9 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-<img alt="github cards" width="100%" height="200px" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=cidkumagai&theme=onedark" />
-<p align="center"> 
-  <img alt="Top Langs" width="50%" height="150px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=cidkumagai&layout=compact&show_icons=true&theme=onedark" />
-  <img alt="github stats" width="50%" height="150px" src="https://github-readme-stats.vercel.app/api?username=cidkumagai&theme=onedark&show_icons=ture" />
-</p>
+[![](https://raw.githubusercontent.com/cidkumagai/cidkumagai/master/profile-summary-card-output/apprentice/0-profile-details.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+
+[![](https://raw.githubusercontent.com/cidkumagai/cidkumagai/master/profile-summary-card-output/apprentice/1-repos-per-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/cidkumagai/cidkumagai/master/profile-summary-card-output/apprentice/2-most-commit-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+
+
+[![](https://raw.githubusercontent.com/cidkumagai/cidkumagai/master/profile-summary-card-output/apprentice/3-stats.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/cidkumagai/cidkumagai/master/profile-summary-card-output/apprentice/4-productive-time.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)

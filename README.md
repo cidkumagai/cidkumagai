@@ -13,6 +13,10 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
+<p align="center">
+  <img src="bear/bear.svg" alt="くまのステータス：gitとトレーニングの草で育つくま" width="830">
+</p>
+
 
 [![](https://raw.githubusercontent.com/cidkumagai/cidkumagai/main/profile-summary-card-output/highcontrast/0-profile-details.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
 [![](https://raw.githubusercontent.com/cidkumagai/cidkumagai/main/profile-summary-card-output/highcontrast/1-repos-per-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/cidkumagai/cidkumagai/main/profile-summary-card-output/highcontrast/2-most-commit-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)

@@ -1,0 +1,58 @@
+name: くまのステータス
+
+on:
+  schedule:
+    - cron: "10 15 * * *" # 毎日 0:10（日本時間）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bear
+  cancel-in-progress: false
+
+jobs:
+  bear:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: cidkumagai/rep-smith
+          token: ${{ secrets.REP_SMITH_REPO_TOKEN }}
+          path: rep-smith
+          sparse-checkout: |
+            cli
+            web/src/lib/volume.ts
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: フォントの切り出しに使う fonttools を入れる
+        run: pip install --quiet fonttools
+
+      - name: トレの草（rep-smith）
+        run: node rep-smith/cli/src/main.ts export daily --days 365 --out bear/lift.json
+        env:
+          REP_SMITH_TOKEN: ${{ secrets.REP_SMITH_TOKEN }}
+
+      - name: gitの草（GitHub）
+        run: node bear/fetch-contributions.mjs --user ${{ github.repository_owner }} --out bear/git.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN || github.token }}
+
+      - name: くまを描く
+        run: node bear/gen-bear-idle.mjs --git bear/git.json --lift bear/lift.json --variant map --out bear/bear.svg
+
+      - name: コミット
+        run: |
+          rm -rf rep-smith
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bear/bear.svg bear/git.json bear/lift.json
+          git diff --cached --quiet || git commit -m "chore: くまのステータスを更新"
+          git push
